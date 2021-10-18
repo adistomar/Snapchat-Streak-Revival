@@ -19,3 +19,5 @@
 ### How to run:
 * Run the file directly from an IDE or open command line and run `python3 typeracer.py` or `python typeracer.py` depending on your OS and python version
 * If you hadn't previously entered your friend's username or the length of the old streak, you will be prompted to do so now
+### Prospects:
+* Adding CAPTCHA bypass to further increase convenience
