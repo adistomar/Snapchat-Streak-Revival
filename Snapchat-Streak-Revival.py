@@ -53,6 +53,14 @@ LAST = -1
 # ---------------------------------------------------------------
 
 def main():
+   global friendsUsername
+   global streakLength
+   
+   if (friendsUsername == ""):
+      friendsUsername = input("Enter friend's username: ")
+   if (streakLength == ""):
+      streakLength = input("Enter old streak length: ")
+
    assert PATH, "You need to enter the path to chromedriver into variable 'PATH'"
    assert username, "You need to enter your username into variable 'username'"
    assert emailAddress, "You need to enter your email address into variable 'emailAddress'"
