@@ -4,10 +4,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
+import os
 
 """ user specific information - modify OK """
 # chromedriver path
-PATH = ""
+PATH = "./chromedriver"
 # Your Snapchat username (no spaces), or write “none”
 username = ""
 # Email associated with your Snapchat account (if applicable)
@@ -56,9 +57,9 @@ def main():
    global friendsUsername
    global streakLength
    
-   if (friendsUsername == ""):
+   if not friendsUsername:
       friendsUsername = input("Enter friend's username: ")
-   if (streakLength == ""):
+   if not streakLength:
       streakLength = input("Enter old streak length: ")
 
    assert PATH, "You need to enter the path to chromedriver into variable 'PATH'"
@@ -69,6 +70,7 @@ def main():
    assert friendsUsername, "You need to enter your friend's username into variable 'friendsUsername'"
    assert streakLength, "You need to enter the length of your streak into variable 'streakLength'"
 
+   os.chmod('./chromedriver', 0o755)
    driver = webdriver.Chrome(PATH)
    driver.get(URL)
 
