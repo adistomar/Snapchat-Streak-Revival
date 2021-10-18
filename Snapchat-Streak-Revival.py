@@ -7,7 +7,7 @@ import time
 
 """ user specific information - modify OK """
 # chromedriver path
-PATH = ""
+PATH = "./chromedriver.exe"
 # Your Snapchat username (no spaces), or write “none”
 username = ""
 # Email associated with your Snapchat account (if applicable)
@@ -56,9 +56,9 @@ def main():
    global friendsUsername
    global streakLength
    
-   if (friendsUsername == ""):
+   if not friendsUsername:
       friendsUsername = input("Enter friend's username: ")
-   if (streakLength == ""):
+   if not streakLength:
       streakLength = input("Enter old streak length: ")
 
    assert PATH, "You need to enter the path to chromedriver into variable 'PATH'"
