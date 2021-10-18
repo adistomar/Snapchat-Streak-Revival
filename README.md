@@ -5,6 +5,8 @@
   - Have the program automatically enter all these details for future use thereafter
 ### How to setup:
 * Install Selenium by going to your command line and running `pip install selenium`
+* Click on the `releases` button on the Github page, go to the version that matches your OS, and download the zip file
+* Extract the zip file
 * Open the `Snapchat-Streak-Revival.py` file and fill in the following information - you only have to do this **once**
   - `username` = "Your Snapchat username (no spaces), or write 'none'"
   - `emailAddress` = "Email associated with your Snapchat account (if applicable)"
