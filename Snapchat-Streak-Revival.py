@@ -5,29 +5,30 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 import os
+import json
+import installChromedriver
 
 """ user specific information - modify OK """
 # chromedriver path
 PATH = "./chromedriver"
-# Your Snapchat username (no spaces), or write “none”
-username = ""
-# Email associated with your Snapchat account (if applicable)
-emailAddress = ""
-# Include country code (e.g. +1 202 555 0192)
-mobileNumber = ""
-# Include brand, model and model series
-device = ""
 # Your friend's Snapchat username
 friendsUsername = ""
-# e.g. yesterday or 31/01/16
-issueDate = "today"
 # Numbers only, no letters or symbols
 streakLength = ""
 
 # ---------------------------------------------------------------
 
 """ program preset info - modify OK but not recommended"""
-
+# loading credentials from json
+try:
+   with open('credentials.json') as f:
+      credentials = json.load(f)
+except FileNotFoundError:
+   with open('credentials.json', 'w') as f:
+      json.dump({"username": "", "emailAddress": "", "mobileNumber": "", "device": "", "issueDate": "today"}, f)
+   with open('credentials.json') as f:
+      credentials = json.load(f)
+# required info
 information = ("Our snapstreaks randomly disappeared today, even though we"
 " snapped each other multiple times yesterday and today, and the hourglass icon",
 " didn't show up either.")
@@ -57,16 +58,21 @@ def main():
    global friendsUsername
    global streakLength
    
+   if not credentials["username"]:
+      credentials["username"] = input("Enter your username: (you only have to do this once) ")
+   if not credentials["emailAddress"]:
+      credentials["emailAddress"] = input("Enter your email address: (you only have to do this once) ")
+   if not credentials["mobileNumber"]:
+      credentials["mobileNumber"] = input("Enter your phone number: (you only have to do this once) ")
+   if not credentials["device"]:
+      credentials["device"] = input("Enter the device on which you have Snapchat: (you only have to do this once) ")
+   with open("credentials.json", "w") as outfile:
+      json.dump(credentials, outfile)
    if not friendsUsername:
       friendsUsername = input("Enter friend's username: ")
    if not streakLength:
       streakLength = input("Enter old streak length: ")
 
-   assert PATH, "You need to enter the path to chromedriver into variable 'PATH'"
-   assert username, "You need to enter your username into variable 'username'"
-   assert emailAddress, "You need to enter your email address into variable 'emailAddress'"
-   assert mobileNumber, "You need to enter your phone number into variable 'mobileNumber'"
-   assert device, "You need to enter your device into variable 'device'"
    assert friendsUsername, "You need to enter your friend's username into variable 'friendsUsername'"
    assert streakLength, "You need to enter the length of your streak into variable 'streakLength'"
 
@@ -79,19 +85,19 @@ def main():
 
    # username
    username_input = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, USERNAME_INPUT_ID)))
-   username_input.send_keys(username)
+   username_input.send_keys(credentials["username"])
 
    # email address
    email_input = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, EMAIL_INPUT_ID)))
-   email_input.send_keys(emailAddress)
+   email_input.send_keys(credentials["emailAddress"])
 
    # mobile number
    mobile_input = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, PHONE_NUMBER_INPUT_ID)))
-   mobile_input.send_keys(mobileNumber)
+   mobile_input.send_keys(credentials["mobileNumber"])
 
    # device
    device_input = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, DEVICE_INPUT_ID)))
-   device_input.send_keys(device)
+   device_input.send_keys(credentials["device"])
 
    # friend's username
    friend_input = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, FRIEND_USERNAME_INPUT_ID)))
@@ -99,7 +105,7 @@ def main():
 
    # issue date
    issue_date_input = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, ISSUE_DATE_INPUT_ID)))
-   issue_date_input.send_keys(issueDate)
+   issue_date_input.send_keys(credentials["issueDate"])
 
    # snapstreak length
    streak_length_input = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, STREAK_LENGTH_INPUT_ID)))
@@ -120,4 +126,5 @@ def main():
 
    time.sleep(1000)
 
+installChromedriver
 main()
