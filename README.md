@@ -1,18 +1,18 @@
 # Snapchat-Streak-Revival
 ### Purpose:
-* To allow the user to restore his or her streaks 🔥 in a convenient manner
-  - Enter information required by Snapchat's support website into certain variables only once
-  - Have the program automatically enter all these details for future use thereafter
+* Restore streaks 🔥 in a convenient manner
+  - Enter information required by Snapchat's support website into certain variables only **once**
+  - Have the program automatically enter all these details thereafter
 ### How to setup:
-* Install Selenium by going to your command line and running `pip install selenium`
-* Open the `Snapchat-Streak-Revival.py` file and fill in the following information - you only have to do this **once**
-  - `username` = "Your Snapchat username (no spaces), or write 'none'"
-  - `emailAddress` = "Email associated with your Snapchat account (if applicable)"
-  - `mobileNumber` = "Include country code (e.g. +1 202 555 0192)"
-  - `device` = "Include brand, model and model series"
-  - *Note:* You can fill in `friendsUsername` and `streaksLength` in this step as well, but you don't have to
+* Go to `releases` and install the latest zip folder for your operating system
+* Unzip the zip folder into a desired location
+* *Note:* You will need to have Python installed to be able to use this program
 ### How to run:
-* Run the file directly from an IDE or open command line and enter `python3 typeracer.py`
-* If you hadn't previously entered your friend's username or the length of the old streak, you will be prompted to do so now
+* Open terminal and enter the directory of your unzipped folder
+* For example, if you unzipped it in `Downloads`, do
+```
+cd Downloads/Snapchat-Streak-Revival
+```
+* Once you are in the directory, run `python3 main.py`
 ### Prospects:
 * Adding CAPTCHA bypass to further increase convenience
