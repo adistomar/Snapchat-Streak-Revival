@@ -1,5 +1,15 @@
-import requests
-from bs4 import BeautifulSoup
+try:
+    import requests
+except:
+    import pip
+    pip.main(['install', 'requests'])
+    import requests
+try:
+    from bs4 import BeautifulSoup
+except:
+    import pip
+    pip.main(['install', 'bs4'])
+    from bs4 import BeautifulSoup
 import zipfile, io
 from subprocess import PIPE, run
 
