@@ -26,7 +26,7 @@ def out(command):
 
 CHROME_DOWNLOAD_PATH_WINDOWS = 'reg query "HKEY_CURRENT_USER\Software\Google\Chrome\BLBeacon" /v version'
 BRANCH = "win"
-VERSION = out(CHROME_DOWNLOAD_PATH_WINDOWS)[-14:-12]
+VERSION = out(CHROME_DOWNLOAD_PATH_WINDOWS)[-15:-12]
 url = "https://chromedriver.chromium.org/downloads"
 urls = []
 
