@@ -20,7 +20,7 @@ def out(command):
 
 CHROME_DOWNLOAD_PATH_MAC = "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version"
 BRANCH = "mac"
-VERSION = out(CHROME_DOWNLOAD_PATH_MAC)[14:16]
+VERSION = out(CHROME_DOWNLOAD_PATH_MAC)[14:17]
 url = "https://chromedriver.chromium.org/downloads"
 urls = []
 
