@@ -17,10 +17,10 @@ How to run:
 .. code:: sh
 
     # MacOS
-    cd Downloads/Snapchat-Streak-Revival-3.0-MacOS
+    cd Downloads/Snapchat-Streak-Revival-4.0-MacOS
     
     # Windows
-    cd Downloads/Snapchat-Streak-Revival-3.0-Windows
+    cd Downloads/Snapchat-Streak-Revival-4.0-Windows
 
 * Once you are in the directory, run
 .. code:: py
