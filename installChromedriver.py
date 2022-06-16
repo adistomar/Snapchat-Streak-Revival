@@ -71,7 +71,7 @@ def get_version():
       version = out(chrome_download_path)[14:17]
    elif platform == "win":
       chrome_download_path = 'reg query "HKEY_CURRENT_USER\Software\Google\Chrome\BLBeacon" /v version'
-      version = out(chrome_download_path)[-15:-12]
+      version = out(chrome_download_path)[-16:-13]
    return version
 
 
@@ -97,5 +97,6 @@ def download_and_unzip():
    z.extractall()
 
 
-get_download_page()
-download_and_unzip()
+def install():
+   get_download_page()
+   download_and_unzip()
