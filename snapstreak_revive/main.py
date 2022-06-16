@@ -1,21 +1,12 @@
-try:
-   from selenium import webdriver
-   from selenium.webdriver.support.ui import WebDriverWait
-   from selenium.webdriver.support import expected_conditions as EC
-   from selenium.webdriver.common.by import By
-   from selenium.webdriver.common.keys import Keys
-except:
-   import pip
-   pip.main(['install', 'selenium'])
-   from selenium import webdriver
-   from selenium.webdriver.support.ui import WebDriverWait
-   from selenium.webdriver.support import expected_conditions as EC
-   from selenium.webdriver.common.by import By
-   from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 import time
 import os
 import json
-import installChromedriver
+import chromedriver_autoinstall
 
 """ user specific information - modify OK """
 # chromedriver path
@@ -86,7 +77,8 @@ def main():
    assert friendsUsername, "You need to enter your friend's username into variable 'friendsUsername'"
    assert streakLength, "You need to enter the length of your streak into variable 'streakLength'"
 
-   if installChromedriver.get_platform() == "mac":
+   chromedriver_autoinstall.install()
+   if chromedriver_autoinstall.get_platform() == "mac":
       os.chmod('./chromedriver', 0o755)
    driver = webdriver.Chrome(PATH)
    driver.get(URL)
@@ -137,7 +129,3 @@ def main():
    submit_button = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, SUBMIT_BUTTON_ID))).click()
 
    time.sleep(1000)
-
-
-installChromedriver.install()
-main()
