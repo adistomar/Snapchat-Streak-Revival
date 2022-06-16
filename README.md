@@ -7,7 +7,7 @@
     - Have the program automatically enter all these details thereafter
 
 ## How to setup:
-- Go to ``releases`` and install the latest zip folder for your operating system
+- Go to ``releases`` and install the latest zip folder
 - Unzip the zip folder into a desired location
 - *Note:* You will need to [have Python installed](https://www.python.org/downloads/) to be able to use this program
 
