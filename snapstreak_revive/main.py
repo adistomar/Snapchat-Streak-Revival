@@ -117,9 +117,9 @@ def main():
 
    # hourglass icon
    time.sleep(0.2)
-   hourglass_dropbox = (driver.find_elements_by_tag_name(DROPDOWN_HOURGLASS_TAG))[LAST].click()
+   hourglass_dropbox = (driver.find_elements(By.TAG_NAME, DROPDOWN_HOURGLASS_TAG))[LAST].click()
    time.sleep(0.2)
-   dropbox_no_option = driver.find_element_by_xpath(DROPDOWN_DATA_VALUE_CLASS).click()
+   dropbox_no_option = driver.find_element(By.XPATH, DROPDOWN_DATA_VALUE_CLASS).click()
 
    # details
    information_input = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, INFORMATION_INPUT_ID)))
