@@ -38,6 +38,7 @@ information = ("Our snapstreaks randomly disappeared today, even though we"
 """ website specific IDs - do not modify"""
 
 URL = "https://support.snapchat.com/en-GB/i-need-help"
+SUCCESS_URL = "https://support.snapchat.com/en-GB/success"
 HELP_OPTION_ID = "5695496404336640"
 USERNAME_INPUT_ID = "field-24281229"
 EMAIL_INPUT_ID = "field-24335325"
@@ -128,4 +129,5 @@ def main():
    # submit button
    submit_button = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, SUBMIT_BUTTON_ID))).click()
 
-   time.sleep(1000)
+   WebDriverWait(driver, 1000).until(lambda driver: driver.current_url == SUCCESS_URL)
+   driver.quit()
