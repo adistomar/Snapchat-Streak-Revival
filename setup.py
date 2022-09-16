@@ -8,7 +8,7 @@ with open('README.md') as readme_file:
 
 setup(
    name="snapstreak_revive",
-   version="0.0.1",
+   version="0.0.2",
    author="RoastSea8 (Aditya Tomar)",
    author_email="aditya26042005@gmail.com",
    description="Automatically enters required information on the Snapchat support website to retrieve snapstreaks.",
@@ -24,7 +24,7 @@ setup(
    long_description=long_description,
    python_requires=">=3.6",
    classifiers=[
-      "Development Status :: 4 - Beta",
+      "Development Status :: 5 - Production/Stable",
       "Topic :: Software Development :: Testing",
       "Topic :: System :: Installation/Setup",
       "Topic :: Software Development :: Libraries :: Python Modules",
