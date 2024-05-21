@@ -9,7 +9,7 @@ with open('README.md') as readme_file:
 setup(
    name="snapstreak_revive",
    version="0.0.2",
-   author="RoastSea8 (Aditya Tomar)",
+   author="adistomar (Aditya Tomar)",
    author_email="aditya26042005@gmail.com",
    description="Automatically enters required information on the Snapchat support website to retrieve snapstreaks.",
    license="MIT",
