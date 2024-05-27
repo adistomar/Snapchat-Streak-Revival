@@ -1,3 +1,4 @@
+# ⚠️ Repo archived as Snapchat added captcha protection against such services and now charges money to restore streaks
 # Snapchat-Streak-Revival
 - Restore streaks 🔥 in a convenient manner
     - Enter information required by Snapchat's support website only **once**.
